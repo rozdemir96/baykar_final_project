@@ -1,0 +1,35 @@
+<div style="display: flex;flex-direction: column; gap: 10rem 0; align-items: center">
+  <table  style="width:100%; border: 1px solid black">
+    <tr>
+    <th>   Marka
+    </th><th>
+   Model
+     </th><th>
+    Kategori
+    </th><th>
+    Ağırlık
+    </th>
+      <th>İşlemler</th>
+    </tr>
+    <tr *ngFor="let iha of availableIhaList">
+      <td (focusout)="updateIha(iha, 'marka')" contenteditable="true">{{iha.marka}}</td>
+      <td (focusout)="updateIha(iha, 'model')" contenteditable="true">{{iha.model}}</td>
+      <td (focusout)="updateIha(iha, 'kategori')" contenteditable="true">{{iha.kategori}}</td>
+      <td (focusout)="updateIha(iha, 'agirlik')" contenteditable="true">{{iha.agirlik}}</td>
+      <button (click)="deleteIha(iha)">delete</button>
+    </tr>
+  </table>
+
+
+  <form [formGroup]="ihaCreateForm" style="display: flex; flex-direction: column; gap: 1rem 0">
+    <label  for="marka">Marka</label>
+    <input formControlName="marka" id="marka" type="text"/>
+    <label  for="model">Model</label>
+    <input formControlName="model" id="model" type="text"/>
+    <label  for="kategori">Kategori</label>
+    <input formControlName="kategori" id="kategori" type="text"/>
+    <label  for="agirlik">Ağırlık</label>
+    <input formControlName="agirlik" id="agirlik" type="text"/>
+    <button (click)="createIha()">Add IHA</button>
+  </form>
+</div>

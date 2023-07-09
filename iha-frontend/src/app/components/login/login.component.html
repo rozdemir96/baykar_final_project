@@ -1,0 +1,11 @@
+
+<div style="display:flex; justify-content: center; flex-direction: column; align-items: center">
+  <input [(ngModel)]="username" type="text" placeholder="username">
+  <input [(ngModel)]="password" type="password" placeholder="password">
+  <div><button routerLink="sign-up">
+    sign up
+  </button>
+    <button (click)="login()">Giriş</button>
+  </div>
+
+</div>
